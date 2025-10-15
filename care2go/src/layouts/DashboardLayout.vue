@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter, useRoute, RouterView } from 'vue-router'
 
 const router = useRouter()
 const route = useRoute()
@@ -121,12 +121,10 @@ const isActive = (path: string) => {
       </nav>
 
       <!-- Logout Button (at bottom) -->
-      <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-indigo-800">
+      <div class="absolute bottom-0 left-0 right-0 p-4 flex">
         <button
           @click="handleLogout"
-          :class="[
-            'w-full flex items-center space-x-3 p-3 rounded-lg transition text-indigo-200 hover:bg-red-700 hover:text-white'
-          ]"
+          class="flex items-center space-x-3 p-3 rounded-lg transition text-indigo-200 hover:bg-red-700 hover:text-white"
         >
           <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
@@ -166,7 +164,7 @@ const isActive = (path: string) => {
 
       <!-- Content Area -->
       <main class="flex-1 overflow-y-auto bg-gray-50 p-6">
-        <slot />
+        <RouterView />
       </main>
     </div>
   </div>
