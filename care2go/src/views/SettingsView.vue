@@ -24,13 +24,13 @@ const handleSave = () => {
 </script>
 
 <template>
-  <div class="space-y-6">
+  <div class="space-y-4 md:space-y-6">
     <!-- General Settings -->
     <div class="bg-white rounded-lg shadow">
-      <div class="p-6 border-b border-gray-200">
-        <h2 class="text-xl font-semibold text-gray-800">ตั้งค่าทั่วไป</h2>
+      <div class="p-4 md:p-6 border-b border-gray-200">
+        <h2 class="text-lg md:text-xl font-semibold text-gray-800">ตั้งค่าทั่วไป</h2>
       </div>
-      <div class="p-6 space-y-4">
+      <div class="p-4 md:p-6 space-y-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-2">ชื่อธุรกิจ</label>
           <input
@@ -70,10 +70,10 @@ const handleSave = () => {
 
     <!-- Business Hours -->
     <div class="bg-white rounded-lg shadow">
-      <div class="p-6 border-b border-gray-200">
-        <h2 class="text-xl font-semibold text-gray-800">เวลาทำการ</h2>
+      <div class="p-4 md:p-6 border-b border-gray-200">
+        <h2 class="text-lg md:text-xl font-semibold text-gray-800">เวลาทำการ</h2>
       </div>
-      <div class="p-6 space-y-4">
+      <div class="p-4 md:p-6 space-y-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">เวลาเปิด</label>
@@ -119,10 +119,10 @@ const handleSave = () => {
 
     <!-- Notifications -->
     <div class="bg-white rounded-lg shadow">
-      <div class="p-6 border-b border-gray-200">
-        <h2 class="text-xl font-semibold text-gray-800">การแจ้งเตือน</h2>
+      <div class="p-4 md:p-6 border-b border-gray-200">
+        <h2 class="text-lg md:text-xl font-semibold text-gray-800">การแจ้งเตือน</h2>
       </div>
-      <div class="p-6 space-y-4">
+      <div class="p-4 md:p-6 space-y-4">
         <div class="flex items-center justify-between">
           <div>
             <div class="font-medium text-gray-900">อีเมล</div>
@@ -158,25 +158,25 @@ const handleSave = () => {
 
     <!-- Danger Zone -->
     <div class="bg-white rounded-lg shadow border-2 border-red-200">
-      <div class="p-6 border-b border-red-200 bg-red-50">
-        <h2 class="text-xl font-semibold text-red-800">Danger Zone</h2>
+      <div class="p-4 md:p-6 border-b border-red-200 bg-red-50">
+        <h2 class="text-lg md:text-xl font-semibold text-red-800">Danger Zone</h2>
       </div>
-      <div class="p-6 space-y-4">
-        <div class="flex items-center justify-between">
+      <div class="p-4 md:p-6 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <div class="font-medium text-gray-900">ล้างข้อมูลทั้งหมด</div>
-            <div class="text-sm text-gray-600">ลบข้อมูลการจอง ผู้ใช้งาน และข้อมูลอื่นๆ ทั้งหมด</div>
+            <div class="font-medium text-gray-900 text-sm md:text-base">ล้างข้อมูลทั้งหมด</div>
+            <div class="text-xs md:text-sm text-gray-600">ลบข้อมูลการจอง ผู้ใช้งาน และข้อมูลอื่นๆ ทั้งหมด</div>
           </div>
-          <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition">
+          <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition text-sm md:text-base whitespace-nowrap">
             ล้างข้อมูล
           </button>
         </div>
-        <div class="flex items-center justify-between">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <div class="font-medium text-gray-900">ปิดใช้งานระบบ</div>
-            <div class="text-sm text-gray-600">ปิดการใช้งานระบบชั่วคราว</div>
+            <div class="font-medium text-gray-900 text-sm md:text-base">ปิดใช้งานระบบ</div>
+            <div class="text-xs md:text-sm text-gray-600">ปิดการใช้งานระบบชั่วคราว</div>
           </div>
-          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition">
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition text-sm md:text-base whitespace-nowrap">
             ปิดระบบ
           </button>
         </div>
@@ -187,7 +187,7 @@ const handleSave = () => {
     <div class="flex justify-end">
       <button
         @click="handleSave"
-        class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3 rounded-lg transition"
+        class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 md:px-8 py-2.5 md:py-3 rounded-lg transition text-sm md:text-base"
       >
         บันทึกการตั้งค่า
       </button>

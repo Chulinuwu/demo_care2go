@@ -30,17 +30,17 @@ const handleLogin = async () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4">
+  <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4 py-8">
     <div class="w-full max-w-md">
       <!-- Logo/Title -->
-      <div class="text-center mb-8">
-        <h1 class="text-4xl font-bold text-gray-800 mb-2">Care2Go</h1>
-        <p class="text-gray-600">ระบบจัดการบริการดูแลผู้สูงอายุ</p>
+      <div class="text-center mb-6 md:mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Care2Go</h1>
+        <p class="text-sm md:text-base text-gray-600">ระบบจัดการบริการดูแลผู้สูงอายุ</p>
       </div>
 
       <!-- Login Form -->
-      <div class="bg-white rounded-lg shadow-lg p-8">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-6">เข้าสู่ระบบ</h2>
+      <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+        <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-6">เข้าสู่ระบบ</h2>
         
         <form @submit.prevent="handleLogin" class="space-y-4">
           <!-- Username Input -->
