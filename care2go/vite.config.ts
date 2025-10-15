@@ -17,4 +17,8 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  server: {
+    host: true, // เปิด --host อัตโนมัติ
+    port: 5173,
+  },
 })
