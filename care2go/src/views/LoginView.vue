@@ -35,7 +35,6 @@ const handleLogin = async () => {
       <!-- Logo/Title -->
       <div class="text-center mb-6 md:mb-8">
         <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Care2Go</h1>
-        <p class="text-sm md:text-base text-gray-600">ระบบจัดการบริการดูแลผู้สูงอายุ</p>
       </div>
 
       <!-- Login Form -->
