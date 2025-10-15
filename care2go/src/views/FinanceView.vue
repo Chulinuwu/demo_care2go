@@ -38,23 +38,46 @@ const totalTransactions = computed(() => mockTransactions.length)
 
     <!-- Monthly Revenue Chart -->
     <div class="bg-white rounded-lg shadow p-4 md:p-6">
-      <h2 class="text-xl font-semibold text-gray-800 mb-4">รายได้รายเดือน</h2>
+      <h2 class="text-xl font-semibold text-gray-800 mb-6">รายได้รายเดือน</h2>
       <div class="overflow-x-auto">
         <div class="min-w-[600px]">
-          <div class="flex items-end gap-2 h-64">
-            <div
-              v-for="month in mockMonthlyRevenue"
-              :key="month.date"
-              class="flex-1 flex flex-col items-center"
-            >
-              <div class="w-full bg-indigo-500 rounded-t hover:bg-indigo-600 transition cursor-pointer relative group"
-                :style="{ height: (month.amount / 800000 * 100) + '%' }"
+          <!-- Y-axis labels -->
+          <div class="flex justify-between text-xs text-gray-500 mb-2">
+            <span>800k</span>
+            <span>600k</span>
+            <span>400k</span>
+            <span>200k</span>
+            <span>0</span>
+          </div>
+          
+          <!-- Chart Container -->
+          <div class="relative h-64 border-l-2 border-b-2 border-gray-300">
+            <div class="absolute inset-0 flex items-end gap-2 p-2">
+              <div
+                v-for="month in mockMonthlyRevenue"
+                :key="month.date"
+                class="flex-1 flex flex-col items-center justify-end"
               >
-                <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                  {{ month.amount.toLocaleString() }} ฿
+                <div 
+                  class="w-full bg-indigo-500 rounded-t hover:bg-indigo-600 transition cursor-pointer relative group"
+                  :style="{ height: (month.amount / 800000 * 240) + 'px' }"
+                >
+                  <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-3 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10">
+                    {{ month.amount.toLocaleString() }} ฿
+                  </div>
                 </div>
               </div>
-              <div class="text-xs text-gray-600 mt-2">{{ month.date.slice(5) }}</div>
+            </div>
+          </div>
+          
+          <!-- X-axis labels -->
+          <div class="flex gap-2 mt-2">
+            <div
+              v-for="month in mockMonthlyRevenue"
+              :key="month.date + '-label'"
+              class="flex-1 text-center"
+            >
+              <div class="text-xs text-gray-600">{{ month.date.slice(5) }}</div>
             </div>
           </div>
         </div>
