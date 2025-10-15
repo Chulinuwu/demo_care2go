@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const features = [
   {
@@ -23,10 +26,28 @@ const features = [
     description: 'พร้อมให้บริการตลอด 24 ชั่วโมง ทุกวัน'
   }
 ]
+
+const handleLogout = () => {
+  localStorage.removeItem('isAuthenticated')
+  router.push('/login')
+}
 </script>
 
 <template>
   <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <!-- Header with Logout -->
+    <div class="bg-white shadow-sm">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-gray-800">Care2Go</h1>
+        <button
+          @click="handleLogout"
+          class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-200"
+        >
+          ออกจากระบบ
+        </button>
+      </div>
+    </div>
+
     <!-- Hero Section -->
     <div class="container mx-auto px-4 py-16">
       <div class="text-center mb-16">
